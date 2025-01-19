@@ -3,3 +3,7 @@ case
 protector
 watch
 tab
+charger
+power bank
+stand
+earbuds
