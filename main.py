@@ -11,11 +11,10 @@ if __name__=='__main__':
         product_from_daraz_future = executor.submit(daraz_main, query)
         product_from_telemart_future = executor.submit(telemart_main, query)
         product_from_shophive_future = executor.submit(shophive_main, query)   
-
-        product_from_daraz = product_from_daraz_future.result()
-        product_from_telemart = product_from_telemart_future.result()
-        product_from_shophive = product_from_shophive_future.result()
-        
-        print(f'\n product returned from daraz {product_from_daraz}')
-        print(f'\n product returned from telemart {product_from_telemart}')
-        print(f'\n product returned from shophive {product_from_shophive}')
+        results = {
+            'Daraz': product_from_daraz_future.result(),
+            'Telemart': product_from_telemart_future.result(), 
+            'Shophive': product_from_shophive_future.result()
+        }
+        for store, products in results.items():
+            print(f'\nProducts returned from {store}: {products}')
