@@ -7,3 +7,5 @@ charger
 power bank
 stand
 earbuds
+stylus
+charging cable
